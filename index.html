@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>Moataz.dev — Developer Portfolio</title>
+    <meta
+      name="description"
+      content="Personal developer portfolio of Moataz AbdElmutaal, Full-Stack Web Developer specializing in Laravel, AWS cloud infrastructure, and responsive web interfaces."
+    />
+    <meta property="og:title" content="Moataz.dev — Developer Portfolio" />
+    <meta
+      property="og:description"
+      content="Personal developer portfolio of Moataz AbdElmutaal, Full-Stack Web Developer specializing in Laravel, AWS cloud infrastructure, and responsive web interfaces."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: Inter (English) & Cairo (Arabic) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap 5.3 CSS (dynamically swapped between LTR and RTL by js/main.js) -->
+    <link
+      id="bootstrap-css"
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons 1.11 CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Prevent theme & RTL flash before first paint -->
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem('portfolio_theme');
+          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = savedTheme || (prefersDark ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-bs-theme', theme);
+
+          var savedLang = localStorage.getItem('portfolio_lang') || 'en';
+          if (savedLang === 'ar') {
+            document.documentElement.setAttribute('lang', 'ar');
+            document.documentElement.setAttribute('dir', 'rtl');
+            var bsLink = document.getElementById('bootstrap-css');
+            if (bsLink) {
+              bsLink.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css';
+            }
+          }
+        } catch (e) {
+          // Ignore storage access errors in restricted environments
+        }
+      })();
+    </script>
+  </head>
+
+  <body id="top">
+    <!-- =====================================================================
+         1. STICKY NAVBAR
+    ===================================================================== -->
+    <header class="sticky-top site-header">
+      <nav class="navbar navbar-expand-lg py-3" aria-label="Primary navigation">
+        <div class="container">
+          <!-- Brand Wordmark -->
+          <a class="navbar-brand brand-wordmark" href="#top">
+            Moataz<span class="brand-accent">.dev</span>
+          </a>
+
+          <!-- Mobile Controls + Hamburger -->
+          <div class="d-flex align-items-center gap-2 d-lg-none">
+            <button
+              type="button"
+              class="btn btn-icon-control theme-toggle-btn"
+              aria-label="Toggle color theme"
+              data-i18n-aria="controls.themeToggle"
+            >
+              <i class="bi bi-moon-stars theme-icon" aria-hidden="true"></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-lang-control lang-toggle-btn"
+              aria-label="Switch language"
+              data-i18n-aria="controls.langToggle"
+            >
+              <span class="lang-label">AR</span>
+            </button>
+            <button
+              class="navbar-toggler btn-icon-control"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#mainNavbar"
+              aria-controls="mainNavbar"
+              aria-expanded="false"
+              aria-label="Toggle navigation menu"
+            >
+              <i class="bi bi-list fs-5" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <!-- Collapsible Navigation Links & Desktop Controls -->
+          <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav mx-auto my-3 my-lg-0 gap-lg-4 align-items-lg-center">
+              <li class="nav-item">
+                <a class="nav-link active" href="#about" data-i18n="nav.about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#skills" data-i18n="nav.skills">Skills</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#projects" data-i18n="nav.projects">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact" data-i18n="nav.contact">Contact</a>
+              </li>
+            </ul>
+
+            <!-- Desktop Theme & Language Controls -->
+            <div class="d-none d-lg-flex align-items-center gap-2">
+              <button
+                type="button"
+                class="btn btn-icon-control theme-toggle-btn"
+                aria-label="Toggle color theme"
+                data-i18n-aria="controls.themeToggle"
+              >
+                <i class="bi bi-moon-stars theme-icon" aria-hidden="true"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-lang-control lang-toggle-btn"
+                aria-label="Switch language"
+                data-i18n-aria="controls.langToggle"
+              >
+                <span class="lang-label">AR</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- =====================================================================
+           2. HERO SECTION (ABOUT)
+      ===================================================================== -->
+      <section id="about" class="hero-section section-spacing">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <!-- Left / Start Column: Identity, Bio & CTAs -->
+            <div class="col-lg-7 order-2 order-lg-1">
+              <p class="hero-role mb-3" data-i18n="hero.role">
+                Full-Stack Web Developer (Laravel &amp; AWS)
+              </p>
+
+              <h1 class="hero-title mb-4" data-i18n="hero.name">
+                Moataz AbdElmutaal
+              </h1>
+
+              <p class="hero-bio mb-4" data-i18n="hero.bio">
+                I build reliable Laravel backend systems, manage scalable AWS cloud infrastructure, and craft clean, responsive web interfaces. By pairing solid engineering fundamentals with AI-assisted development workflows, I deliver production-ready applications with speed and precision.
+              </p>
+
+              <div class="d-flex flex-wrap align-items-center gap-3 pt-2">
+                <!-- EDIT HERE: Place your CV PDF at assets/cv/Moataz-CV.pdf -->
+                <a
+                  href="assets/cv/Moataz-CV.pdf"
+                  download
+                  class="btn btn-primary-accent d-inline-flex align-items-center gap-2"
+                >
+                  <i class="bi bi-download" aria-hidden="true"></i>
+                  <span data-i18n="hero.downloadCv">Download My CV</span>
+                </a>
+
+                <!-- EDIT HERE: Your GitHub Profile URL -->
+                <a
+                  href="https://github.com/MoatazAbdElmutaal"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-outline-surface d-inline-flex align-items-center gap-2"
+                >
+                  <i class="bi bi-github" aria-hidden="true"></i>
+                  <span data-i18n="hero.viewGithub">View GitHub</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right / End Column: Personal Photo Container with Clean Fallback -->
+            <div class="col-lg-5 order-1 order-lg-2 d-flex justify-content-center justify-content-lg-end">
+              <div class="profile-frame" id="profileFrame">
+                <!-- EDIT HERE: Drop your personal photo at assets/images/profile.jpg -->
+                <img
+                  src="assets/images/profile.jpg"
+                  alt="Moataz AbdElmutaal — Full-Stack Web Developer"
+                  class="profile-photo"
+                  id="profilePhoto"
+                  referrerpolicy="no-referrer"
+                />
+                <!-- Clean automatic fallback displayed until assets/images/profile.jpg is added -->
+                <div class="profile-fallback" id="profileFallback" aria-hidden="false">
+                  <div class="profile-monogram">MA</div>
+                  <div class="profile-fallback-meta">
+                    <span class="profile-fallback-name" data-i18n="hero.name">Moataz AbdElmutaal</span>
+                    <span class="profile-fallback-sub" data-i18n="hero.photoHint">Laravel &amp; AWS Engineer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Architectural Focus Strip below Hero Split -->
+          <div class="hero-focus-strip mt-5 pt-4">
+            <div class="row g-4">
+              <div class="col-6 col-lg-3">
+                <div class="focus-item">
+                  <span class="focus-label" data-i18n="hero.focus1Label">Backend Engineering</span>
+                  <span class="focus-value" data-i18n="hero.focus1Value">PHP · Laravel · MySQL</span>
+                </div>
+              </div>
+              <div class="col-6 col-lg-3">
+                <div class="focus-item">
+                  <span class="focus-label" data-i18n="hero.focus2Label">Cloud Infrastructure</span>
+                  <span class="focus-value" data-i18n="hero.focus2Value">AWS EC2 · RDS · IAM</span>
+                </div>
+              </div>
+              <div class="col-6 col-lg-3">
+                <div class="focus-item">
+                  <span class="focus-label" data-i18n="hero.focus3Label">Frontend Systems</span>
+                  <span class="focus-value" data-i18n="hero.focus3Value">Bootstrap 5 · Vanilla JS</span>
+                </div>
+              </div>
+              <div class="col-6 col-lg-3">
+                <div class="focus-item">
+                  <span class="focus-label" data-i18n="hero.focus4Label">Delivery Workflow</span>
+                  <span class="focus-value" data-i18n="hero.focus4Value">Linux · Git · AI-Assisted</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           3. TECHNICAL SKILLS SECTION
+      ===================================================================== -->
+      <section id="skills" class="section-spacing section-alt">
+        <div class="container">
+          <div class="section-header mb-5">
+            <p class="section-kicker mb-2" data-i18n="skills.kicker">Core Capabilities</p>
+            <h2 class="section-title mb-3" data-i18n="skills.title">Technical Skills</h2>
+            <p class="section-subtitle mb-0" data-i18n="skills.subtitle">
+              A focused full-stack toolkit covering backend architecture, cloud infrastructure, responsive UI engineering, and modern developer tooling.
+            </p>
+          </div>
+
+          <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
+            <!-- Card 1: Backend & Databases -->
+            <div class="col">
+              <article class="skill-card h-100">
+                <div class="skill-card-head">
+                  <div class="skill-icon-box" aria-hidden="true">
+                    <i class="bi bi-database"></i>
+                  </div>
+                  <h3 class="skill-card-title mb-0" data-i18n="skills.backendTitle">
+                    Backend &amp; Databases
+                  </h3>
+                </div>
+                <ul class="skill-list list-unstyled mb-0">
+                  <li data-i18n="skills.backendItems.0">PHP</li>
+                  <li data-i18n="skills.backendItems.1">Laravel</li>
+                  <li data-i18n="skills.backendItems.2">MySQL</li>
+                </ul>
+              </article>
+            </div>
+
+            <!-- Card 2: Cloud & DevOps -->
+            <div class="col">
+              <article class="skill-card h-100">
+                <div class="skill-card-head">
+                  <div class="skill-icon-box" aria-hidden="true">
+                    <i class="bi bi-cloud-check"></i>
+                  </div>
+                  <h3 class="skill-card-title mb-0" data-i18n="skills.cloudTitle">
+                    Cloud &amp; DevOps
+                  </h3>
+                </div>
+                <ul class="skill-list list-unstyled mb-0">
+                  <li data-i18n="skills.cloudItems.0">AWS (EC2, RDS, IAM, Auto Scaling)</li>
+                  <li data-i18n="skills.cloudItems.1">Linux Administration</li>
+                  <li data-i18n="skills.cloudItems.2">Bash Scripting</li>
+                </ul>
+              </article>
+            </div>
+
+            <!-- Card 3: Frontend -->
+            <div class="col">
+              <article class="skill-card h-100">
+                <div class="skill-card-head">
+                  <div class="skill-icon-box" aria-hidden="true">
+                    <i class="bi bi-layout-text-window-reverse"></i>
+                  </div>
+                  <h3 class="skill-card-title mb-0" data-i18n="skills.frontendTitle">
+                    Frontend
+                  </h3>
+                </div>
+                <ul class="skill-list list-unstyled mb-0">
+                  <li data-i18n="skills.frontendItems.0">HTML5 &amp; CSS3</li>
+                  <li data-i18n="skills.frontendItems.1">Bootstrap</li>
+                  <li data-i18n="skills.frontendItems.2">JavaScript</li>
+                  <li data-i18n="skills.frontendItems.3">Blade Templating</li>
+                </ul>
+              </article>
+            </div>
+
+            <!-- Card 4: Tools & Workflow -->
+            <div class="col">
+              <article class="skill-card h-100">
+                <div class="skill-card-head">
+                  <div class="skill-icon-box" aria-hidden="true">
+                    <i class="bi bi-terminal"></i>
+                  </div>
+                  <h3 class="skill-card-title mb-0" data-i18n="skills.toolsTitle">
+                    Tools &amp; Workflow
+                  </h3>
+                </div>
+                <ul class="skill-list list-unstyled mb-0">
+                  <li data-i18n="skills.toolsItems.0">Git &amp; GitHub</li>
+                  <li data-i18n="skills.toolsItems.1">Composer</li>
+                  <li data-i18n="skills.toolsItems.2">AI-Assisted Development</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           4. PROJECTS SECTION (2 CLEAR CATEGORIES)
+      ===================================================================== -->
+      <section id="projects" class="section-spacing">
+        <div class="container">
+          <div class="section-header mb-5">
+            <p class="section-kicker mb-2" data-i18n="projects.kicker">Selected Work</p>
+            <h2 class="section-title mb-3" data-i18n="projects.title">Projects</h2>
+            <p class="section-subtitle mb-0" data-i18n="projects.subtitle">
+              Production-oriented full-stack systems backed by Laravel and AWS, alongside responsive frontend implementations built with clean semantic markup.
+            </p>
+          </div>
+
+          <!-- -----------------------------------------------------------------
+               Category A: Featured Full-Stack Systems (2 prominent cards)
+          ----------------------------------------------------------------- -->
+          <div class="projects-category mb-5 pb-3">
+            <div class="category-heading d-flex flex-wrap align-items-baseline justify-content-between gap-2 mb-4">
+              <h3 class="category-title mb-0" data-i18n="projects.featuredCategory">
+                Featured Full-Stack Systems
+              </h3>
+              <span class="category-count" data-i18n="projects.featuredCount">
+                02 Production Systems
+              </span>
+            </div>
+
+            <div class="row g-4">
+              <!-- Featured Project 1: Pharmacy & Health Center Management System (POS) -->
+              <div class="col-lg-6">
+                <article class="project-card project-card-featured h-100 d-flex flex-column">
+                  <!-- EDIT HERE: Thumbnail link (GitHub Repo or Live Demo URL) & image path -->
+                  <a
+                    href="https://github.com/MoatazAbdElmutaal/health-center-system"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-thumb-link"
+                    aria-label="Open Pharmacy and Health Center Management System repository"
+                  >
+                    <img
+                      src="assets/images/projects/health-center-system.jpg"
+                      alt="Pharmacy and Health Center Management System dashboard preview"
+                      class="project-thumb-img"
+                      loading="lazy"
+                      referrerpolicy="no-referrer"
+                    />
+                    <span class="project-thumb-overlay" aria-hidden="true">
+                      <span class="overlay-badge">
+                        <i class="bi bi-box-arrow-up-right"></i>
+                        <span data-i18n="projects.openProject">Open Project</span>
+                      </span>
+                    </span>
+                  </a>
+
+                  <div class="project-card-body d-flex flex-column flex-grow-1">
+                    <div class="project-stack-line mb-2">
+                      <span>Laravel</span>
+                      <span aria-hidden="true">·</span>
+                      <span>MySQL</span>
+                      <span aria-hidden="true">·</span>
+                      <span>Bootstrap</span>
+                    </div>
+
+                    <h4 class="project-title mb-2" data-i18n="projects.healthCenter.title">
+                      Pharmacy &amp; Health Center Management System (POS)
+                    </h4>
+
+                    <p class="project-desc mb-4" data-i18n="projects.healthCenter.desc">
+                      Comprehensive point-of-sale billing and clinical management platform featuring real-time inventory tracking, role-based access control, and offline desktop execution scripts for uninterrupted local operations.
+                    </p>
+
+                    <div class="project-actions mt-auto pt-3 d-flex flex-wrap align-items-center gap-3">
+                      <a
+                        href="https://github.com/MoatazAbdElmutaal/health-center-system"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-sm btn-primary-accent d-inline-flex align-items-center gap-2"
+                      >
+                        <i class="bi bi-github" aria-hidden="true"></i>
+                        <span data-i18n="projects.githubRepo">GitHub Repo</span>
+                      </a>
+                      <!-- EDIT HERE: Replace href with your live demo URL once deployed, or keep pointing to README/Demo -->
+                      <a
+                        href="https://github.com/MoatazAbdElmutaal/health-center-system#readme"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-sm btn-outline-surface d-inline-flex align-items-center gap-2"
+                      >
+                        <i class="bi bi-journal-text" aria-hidden="true"></i>
+                        <span data-i18n="projects.caseOverview">Documentation</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Featured Project 2: Cloud School Management System -->
+              <div class="col-lg-6">
+                <article class="project-card project-card-featured h-100 d-flex flex-column">
+                  <!-- EDIT HERE: Thumbnail link (replace with your live AWS URL when ready) & image path -->
+                  <a
+                    href="https://github.com/MoatazAbdElmutaal/school-system"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-thumb-link"
+                    aria-label="Open Cloud School Management System repository"
+                  >
+                    <img
+                      src="assets/images/projects/school-system.jpg"
+                      alt="Cloud School Management System dashboard preview"
+                      class="project-thumb-img"
+                      loading="lazy"
+                      referrerpolicy="no-referrer"
+                    />
+                    <span class="project-thumb-overlay" aria-hidden="true">
+                      <span class="overlay-badge">
+                        <i class="bi bi-box-arrow-up-right"></i>
+                        <span data-i18n="projects.openProject">Open Project</span>
+                      </span>
+                    </span>
+                  </a>
+
+                  <div class="project-card-body d-flex flex-column flex-grow-1">
+                    <div class="project-stack-line mb-2">
+                      <span>Laravel</span>
+                      <span aria-hidden="true">·</span>
+                      <span>AWS EC2</span>
+                      <span aria-hidden="true">·</span>
+                      <span>Amazon RDS</span>
+                      <span aria-hidden="true">·</span>
+                      <span>Linux</span>
+                    </div>
+
+                    <h4 class="project-title mb-2" data-i18n="projects.schoolSystem.title">
+                      Cloud School Management System
+                    </h4>
+
+                    <p class="project-desc mb-4" data-i18n="projects.schoolSystem.desc">
+                      Cloud-hosted academic management platform deployed on AWS EC2 Linux servers with managed Amazon RDS database integration, automated backups, and secure custom domain configuration.
+                    </p>
+
+                    <div class="project-actions mt-auto pt-3 d-flex flex-wrap align-items-center gap-3">
+                      <a
+                        href="https://github.com/MoatazAbdElmutaal/school-system"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-sm btn-primary-accent d-inline-flex align-items-center gap-2"
+                      >
+                        <i class="bi bi-github" aria-hidden="true"></i>
+                        <span data-i18n="projects.githubRepo">GitHub Repo</span>
+                      </a>
+                      <!-- EDIT HERE: Replace href with your deployed AWS live demo URL -->
+                      <a
+                        href="https://github.com/MoatazAbdElmutaal/school-system#readme"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-sm btn-outline-surface d-inline-flex align-items-center gap-2"
+                      >
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                        <span data-i18n="projects.liveDemo">Live Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+
+          <!-- -----------------------------------------------------------------
+               Category B: Frontend Showcases (Responsive 3-column grid of 6 cards)
+          ----------------------------------------------------------------- -->
+          <div class="projects-category">
+            <div class="category-heading d-flex flex-wrap align-items-baseline justify-content-between gap-2 mb-4">
+              <h3 class="category-title mb-0" data-i18n="projects.frontendCategory">
+                Frontend Showcases
+              </h3>
+              <span class="category-count" data-i18n="projects.frontendCount">
+                06 Responsive Templates
+              </span>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+              <!-- Frontend Project 1: Agency Design -->
+              <div class="col">
+                <article class="project-card h-100 d-flex flex-column">
+                  <!-- EDIT HERE: Update href to your GitHub Pages live demo URL if enabled -->
+                  <a
+                    href="https://github.com/MoatazAbdElmutaal/Agency-Design"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-thumb-link"
+                    aria-label="Open Agency Design project"
+                  >
+                    <img
+                      src="assets/images/projects/agency-design.jpg"
+                      alt="Agency Design responsive web template preview"
+                      class="project-thumb-img"
+                      loading="lazy"
+                      referrerpolicy="no-referrer"
+                    />
+                    <span class="project-thumb-overlay" aria-hidden="true">
+                      <span class="overlay-badge">
+                        <i class="bi bi-box-arrow-up-right"></i>
+                        <span data-i18n="projects.viewProject">View Project</span>
+                      </span>
+                    </span>
+                  </a>
+                  <div class="project-card-body d-flex flex-column flex-grow-1">
+                    <div class="project-stack-line mb-2">
+                      <span>HTML5</span>
+                      <span aria-hidden="true">·</span>
+                      <span>CSS3</span>
+                      <span aria-hidden="true">·</span>
+                      <span>Responsive UI</span>
+                    </div>
+                    <h4 class="project-title-sm mb-2" data-i18n="projects.agency.title">
+                      Agency Design
+                    </h4>
+                    <p class="project-desc mb-3" data-i18n="projects.agency.desc">
+                      Modern creative agency landing page featuring structured service sections, crisp grid alignment, and mobile-first styling.
+                    </p>
+                    <div class="project-actions mt-auto pt-3 d-flex align-items-center gap-3">
+                      <a
+                        href="https://github.com/MoatazAbdElmutaal/Agency-Design"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-text-link"
+                      >
+                        <i class="bi bi-github" aria-hidden="true"></i>
+                        <span data-i18n="projects.githubRepo">GitHub Repo</span>
+                      </a>
+                      <!-- EDIT HERE: Live Demo URL (GitHub Pages) -->
+                      <a
+                        href="https://moatazabdelmutaal.github.io/Agency-Design/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-text-link project-text-link-muted"
+                      >
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                        <span data-i18n="projects.liveDemo">Live Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Frontend Project 2: Leon Design -->
+              <div class="col">
+                <article class="project-card h-100 d-flex flex-column">
+                  <!-- EDIT HERE: Update href to your GitHub Pages live demo URL if enabled -->
+                  <a
+                    href="https://github.com/MoatazAbdElmutaal/Leon-desgin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-thumb-link"
+                    aria-label="Open Leon Design project"
+                  >
+                    <img
+                      src="assets/images/projects/leon-design.jpg"
+                      alt="Leon Design minimalist template preview"
+                      class="project-thumb-img"
+                      loading="lazy"
+                      referrerpolicy="no-referrer"
+                    />
+                    <span class="project-thumb-overlay" aria-hidden="true">
+                      <span class="overlay-badge">
+                        <i class="bi bi-box-arrow-up-right"></i>
+                        <span data-i18n="projects.viewProject">View Project</span>
+                      </span>
+                    </span>
+                  </a>
+                  <div class="project-card-body d-flex flex-column flex-grow-1">
+                    <div class="project-stack-line mb-2">
+                      <span>HTML5</span>
+                      <span aria-hidden="true">·</span>
+                      <span>CSS3</span>
+                      <span aria-hidden="true">·</span>
+                      <span>CSS Grid</span>
+                    </div>
+                    <h4 class="project-title-sm mb-2" data-i18n="projects.leon.title">
+                      Leon Design
+                    </h4>
+                    <p class="project-desc mb-3" data-i18n="projects.leon.desc">
+                      Minimalist creative studio template focused on generous whitespace, clean typographic rhythm, and fluid responsive cards.
+                    </p>
+                    <div class="project-actions mt-auto pt-3 d-flex align-items-center gap-3">
+                      <a
+                        href="https://github.com/MoatazAbdElmutaal/Leon-desgin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-text-link"
+                      >
+                        <i class="bi bi-github" aria-hidden="true"></i>
+                        <span data-i18n="projects.githubRepo">GitHub Repo</span>
+                      </a>
+                      <!-- EDIT HERE: Live Demo URL (GitHub Pages) -->
+                      <a
+                        href="https://moatazabdelmutaal.github.io/Leon-desgin/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-text-link project-text-link-muted"
+                      >
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                        <span data-i18n="projects.liveDemo">Live Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Frontend Project 3: Kasper Design -->
+              <div class="col">
+                <article class="project-card h-100 d-flex flex-column">
+                  <!-- EDIT HERE: Update href to your GitHub Pages live demo URL if enabled -->
+                  <a
+                    href="https://github.com/MoatazAbdElmutaal/Kasper-desgin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-thumb-link"
+                    aria-label="Open Kasper Design project"
+                  >
+                    <img
+                      src="assets/images/projects/kasper-design.jpg"
+                      alt="Kasper Design creative template preview"
+                      class="project-thumb-img"
+                      loading="lazy"
+                      referrerpolicy="no-referrer"
+                    />
+                    <span class="project-thumb-overlay" aria-hidden="true">
+                      <span class="overlay-badge">
+                        <i class="bi bi-box-arrow-up-right"></i>
+                        <span data-i18n="projects.viewProject">View Project</span>
+                      </span>
+                    </span>
+                  </a>
+                  <div class="project-card-body d-flex flex-column flex-grow-1">
+                    <div class="project-stack-line mb-2">
+                      <span>HTML5</span>
+                      <span aria-hidden="true">·</span>
+                      <span>CSS3</span>
+                      <span aria-hidden="true">·</span>
+                      <span>Flexbox</span>
+                    </div>
+                    <h4 class="project-title-sm mb-2" data-i18n="projects.kasper.title">
+                      Kasper Design
+                    </h4>
+                    <p class="project-desc mb-3" data-i18n="projects.kasper.desc">
+                      Multi-section creative portfolio template with full-bleed hero overlays, structured pricing tables, and responsive gallery layouts.
+                    </p>
+                    <div class="project-actions mt-auto pt-3 d-flex align-items-center gap-3">
+                      <a
+                        href="https://github.com/MoatazAbdElmutaal/Kasper-desgin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-text-link"
+                      >
+                        <i class="bi bi-github" aria-hidden="true"></i>
+                        <span data-i18n="projects.githubRepo">GitHub Repo</span>
+                      </a>
+                      <!-- EDIT HERE: Live Demo URL (GitHub Pages) -->
+                      <a
+                        href="https://moatazabdelmutaal.github.io/Kasper-desgin/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-text-link project-text-link-muted"
+                      >
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                        <span data-i18n="projects.liveDemo">Live Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Frontend Project 4: Gaming Design -->
+              <div class="col">
+                <article class="project-card h-100 d-flex flex-column">
+                  <!-- EDIT HERE: Update href to your GitHub Pages live demo URL if enabled -->
+                  <a
+                    href="https://github.com/MoatazAbdElmutaal/Gaming-desgin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-thumb-link"
+                    aria-label="Open Gaming Design project"
+                  >
+                    <img
+                      src="assets/images/projects/gaming-design.jpg"
+                      alt="Gaming Design community portal template preview"
+                      class="project-thumb-img"
+                      loading="lazy"
+                      referrerpolicy="no-referrer"
+                    />
+                    <span class="project-thumb-overlay" aria-hidden="true">
+                      <span class="overlay-badge">
+                        <i class="bi bi-box-arrow-up-right"></i>
+                        <span data-i18n="projects.viewProject">View Project</span>
+                      </span>
+                    </span>
+                  </a>
+                  <div class="project-card-body d-flex flex-column flex-grow-1">
+                    <div class="project-stack-line mb-2">
+                      <span>HTML5</span>
+                      <span aria-hidden="true">·</span>
+                      <span>CSS3</span>
+                      <span aria-hidden="true">·</span>
+                      <span>JavaScript</span>
+                    </div>
+                    <h4 class="project-title-sm mb-2" data-i18n="projects.gaming.title">
+                      Gaming Design
+                    </h4>
+                    <p class="project-desc mb-3" data-i18n="projects.gaming.desc">
+                      Interactive gaming portal interface built with rich dark-surface contrast, structured content cards, and smooth hover transitions.
+                    </p>
+                    <div class="project-actions mt-auto pt-3 d-flex align-items-center gap-3">
+                      <a
+                        href="https://github.com/MoatazAbdElmutaal/Gaming-desgin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-text-link"
+                      >
+                        <i class="bi bi-github" aria-hidden="true"></i>
+                        <span data-i18n="projects.githubRepo">GitHub Repo</span>
+                      </a>
+                      <!-- EDIT HERE: Live Demo URL (GitHub Pages) -->
+                      <a
+                        href="https://moatazabdelmutaal.github.io/Gaming-desgin/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-text-link project-text-link-muted"
+                      >
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                        <span data-i18n="projects.liveDemo">Live Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Frontend Project 5: Bootcamp Design -->
+              <div class="col">
+                <article class="project-card h-100 d-flex flex-column">
+                  <!-- EDIT HERE: Update href to your GitHub Pages live demo URL if enabled -->
+                  <a
+                    href="https://github.com/MoatazAbdElmutaal/Bootcamp-desgin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-thumb-link"
+                    aria-label="Open Bootcamp Design project"
+                  >
+                    <img
+                      src="assets/images/projects/bootcamp-design.jpg"
+                      alt="Bootcamp Design Bootstrap landing page preview"
+                      class="project-thumb-img"
+                      loading="lazy"
+                      referrerpolicy="no-referrer"
+                    />
+                    <span class="project-thumb-overlay" aria-hidden="true">
+                      <span class="overlay-badge">
+                        <i class="bi bi-box-arrow-up-right"></i>
+                        <span data-i18n="projects.viewProject">View Project</span>
+                      </span>
+                    </span>
+                  </a>
+                  <div class="project-card-body d-flex flex-column flex-grow-1">
+                    <div class="project-stack-line mb-2">
+                      <span>HTML5</span>
+                      <span aria-hidden="true">·</span>
+                      <span>Bootstrap 5</span>
+                      <span aria-hidden="true">·</span>
+                      <span>CSS3</span>
+                    </div>
+                    <h4 class="project-title-sm mb-2" data-i18n="projects.bootcamp.title">
+                      Bootcamp Design
+                    </h4>
+                    <p class="project-desc mb-3" data-i18n="projects.bootcamp.desc">
+                      Responsive developer bootcamp landing page powered by Bootstrap 5 components, FAQ accordions, and enrollment modals.
+                    </p>
+                    <div class="project-actions mt-auto pt-3 d-flex align-items-center gap-3">
+                      <a
+                        href="https://github.com/MoatazAbdElmutaal/Bootcamp-desgin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-text-link"
+                      >
+                        <i class="bi bi-github" aria-hidden="true"></i>
+                        <span data-i18n="projects.githubRepo">GitHub Repo</span>
+                      </a>
+                      <!-- EDIT HERE: Live Demo URL (GitHub Pages) -->
+                      <a
+                        href="https://moatazabdelmutaal.github.io/Bootcamp-desgin/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-text-link project-text-link-muted"
+                      >
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                        <span data-i18n="projects.liveDemo">Live Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Frontend Project 6: The Book Design -->
+              <div class="col">
+                <article class="project-card h-100 d-flex flex-column">
+                  <!-- EDIT HERE: Update href to your GitHub Pages live demo URL if enabled -->
+                  <a
+                    href="https://github.com/MoatazAbdElmutaal/TheBook-design"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-thumb-link"
+                    aria-label="Open The Book Design project"
+                  >
+                    <img
+                      src="assets/images/projects/thebook-design.jpg"
+                      alt="The Book Design editorial landing page preview"
+                      class="project-thumb-img"
+                      loading="lazy"
+                      referrerpolicy="no-referrer"
+                    />
+                    <span class="project-thumb-overlay" aria-hidden="true">
+                      <span class="overlay-badge">
+                        <i class="bi bi-box-arrow-up-right"></i>
+                        <span data-i18n="projects.viewProject">View Project</span>
+                      </span>
+                    </span>
+                  </a>
+                  <div class="project-card-body d-flex flex-column flex-grow-1">
+                    <div class="project-stack-line mb-2">
+                      <span>HTML5</span>
+                      <span aria-hidden="true">·</span>
+                      <span>Bootstrap 5</span>
+                      <span aria-hidden="true">·</span>
+                      <span>Editorial UI</span>
+                    </div>
+                    <h4 class="project-title-sm mb-2" data-i18n="projects.thebook.title">
+                      The Book Design
+                    </h4>
+                    <p class="project-desc mb-3" data-i18n="projects.thebook.desc">
+                      Clean e-book showcase and publishing page highlighting chapter previews, pricing editions, and balanced reading hierarchy.
+                    </p>
+                    <div class="project-actions mt-auto pt-3 d-flex align-items-center gap-3">
+                      <a
+                        href="https://github.com/MoatazAbdElmutaal/TheBook-design"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-text-link"
+                      >
+                        <i class="bi bi-github" aria-hidden="true"></i>
+                        <span data-i18n="projects.githubRepo">GitHub Repo</span>
+                      </a>
+                      <!-- EDIT HERE: Live Demo URL (GitHub Pages) -->
+                      <a
+                        href="https://moatazabdelmutaal.github.io/TheBook-design/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-text-link project-text-link-muted"
+                      >
+                        <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                        <span data-i18n="projects.liveDemo">Live Demo</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           5. CONTACT SECTION
+      ===================================================================== -->
+      <section id="contact" class="section-spacing section-alt">
+        <div class="container">
+          <div class="section-header mb-5">
+            <p class="section-kicker mb-2" data-i18n="contact.kicker">Get In Touch</p>
+            <h2 class="section-title mb-3" data-i18n="contact.title">Contact</h2>
+            <p class="section-subtitle mb-0" data-i18n="contact.subtitle">
+              Open to full-stack web development roles, Laravel &amp; AWS consulting, and collaborative engineering projects. Reach out directly through any channel below.
+            </p>
+          </div>
+
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+            <!-- Contact Card 1: Email -->
+            <div class="col">
+              <!-- EDIT HERE: Replace with your real email address -->
+              <a href="mailto:your.email@example.com" class="contact-card h-100">
+                <div class="contact-card-top">
+                  <div class="skill-icon-box" aria-hidden="true">
+                    <i class="bi bi-envelope"></i>
+                  </div>
+                  <i class="bi bi-arrow-up-right contact-arrow" aria-hidden="true"></i>
+                </div>
+                <h3 class="contact-card-title" data-i18n="contact.emailLabel">Email</h3>
+                <p class="contact-card-value mb-0">your.email@example.com</p>
+              </a>
+            </div>
+
+            <!-- Contact Card 2: LinkedIn -->
+            <div class="col">
+              <!-- EDIT HERE: Replace with your LinkedIn profile URL -->
+              <a
+                href="https://linkedin.com/in/your-linkedin-username"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card h-100"
+              >
+                <div class="contact-card-top">
+                  <div class="skill-icon-box" aria-hidden="true">
+                    <i class="bi bi-linkedin"></i>
+                  </div>
+                  <i class="bi bi-arrow-up-right contact-arrow" aria-hidden="true"></i>
+                </div>
+                <h3 class="contact-card-title" data-i18n="contact.linkedinLabel">LinkedIn</h3>
+                <p class="contact-card-value mb-0">/in/your-linkedin-username</p>
+              </a>
+            </div>
+
+            <!-- Contact Card 3: WhatsApp -->
+            <div class="col">
+              <!-- EDIT HERE: Replace 201000000000 with your WhatsApp number (country code + number, no + sign) -->
+              <a
+                href="https://wa.me/201000000000"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card h-100"
+              >
+                <div class="contact-card-top">
+                  <div class="skill-icon-box" aria-hidden="true">
+                    <i class="bi bi-whatsapp"></i>
+                  </div>
+                  <i class="bi bi-arrow-up-right contact-arrow" aria-hidden="true"></i>
+                </div>
+                <h3 class="contact-card-title" data-i18n="contact.whatsappLabel">WhatsApp</h3>
+                <p class="contact-card-value mb-0" dir="ltr">+20 100 000 0000</p>
+              </a>
+            </div>
+
+            <!-- Contact Card 4: GitHub -->
+            <div class="col">
+              <!-- EDIT HERE: Your GitHub Profile URL -->
+              <a
+                href="https://github.com/MoatazAbdElmutaal"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-card h-100"
+              >
+                <div class="contact-card-top">
+                  <div class="skill-icon-box" aria-hidden="true">
+                    <i class="bi bi-github"></i>
+                  </div>
+                  <i class="bi bi-arrow-up-right contact-arrow" aria-hidden="true"></i>
+                </div>
+                <h3 class="contact-card-title" data-i18n="contact.githubLabel">GitHub</h3>
+                <p class="contact-card-value mb-0">@MoatazAbdElmutaal</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- =====================================================================
+         6. MINIMAL FOOTER
+    ===================================================================== -->
+    <footer class="site-footer py-4">
+      <div class="container">
+        <div class="d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3">
+          <p class="footer-copy mb-0">
+            &copy; <span id="currentYear">2026</span>
+            <span data-i18n="footer.rights">Moataz AbdElmutaal. All rights reserved.</span>
+          </p>
+          <a href="#top" class="footer-top-link d-inline-flex align-items-center gap-1">
+            <span data-i18n="footer.backToTop">Back to top</span>
+            <i class="bi bi-arrow-up-short fs-5" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS Bundle (includes Popper for Collapse) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Portfolio Vanilla JS -->
+    <script src="js/main.js" defer></script>
+  </body>
+</html>

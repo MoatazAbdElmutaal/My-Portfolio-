@@ -65,18 +65,88 @@
         title: 'Technical Skills',
         subtitle:
           'A focused full-stack toolkit covering backend architecture, cloud infrastructure, responsive UI engineering, and modern developer tooling.',
-        backendTitle: 'Backend & Databases',
-        backendItems: ['PHP', 'Laravel', 'MySQL'],
-        cloudTitle: 'Cloud & DevOps',
-        cloudItems: [
-          'AWS (EC2, RDS, IAM, Auto Scaling)',
-          'Linux Administration',
-          'Bash Scripting',
-        ],
-        frontendTitle: 'Frontend',
-        frontendItems: ['HTML5 & CSS3', 'Bootstrap', 'JavaScript', 'Blade Templating'],
-        toolsTitle: 'Tools & Workflow',
-        toolsItems: ['Git & GitHub', 'Composer', 'AI-Assisted Development'],
+        backend: {
+          title: 'Backend & Database Architecture',
+          subtitle:
+            'Building scalable, maintainable server-side systems and relational databases.',
+          items: [
+            {
+              label: 'PHP 8+ & Laravel',
+              detail: 'MVC Architecture, Eloquent ORM, Blade, Migrations & Seeders',
+            },
+            {
+              label: 'System Capabilities',
+              detail:
+                'Multi-Tenancy, Role-Based Access Control (RBAC), RESTful APIs, Excel Data Import/Export',
+            },
+            {
+              label: 'Databases',
+              detail:
+                'MySQL & MariaDB — Relational Schema Design, Indexing & Query Optimization',
+            },
+          ],
+        },
+        cloud: {
+          title: 'Cloud Infrastructure & DevOps',
+          subtitle: 'Deploying, securing, and scaling production web applications.',
+          items: [
+            {
+              label: 'AWS Compute & Scaling',
+              detail: 'EC2, AMIs, Launch Templates, Auto Scaling Groups',
+            },
+            {
+              label: 'AWS Data & Security',
+              detail:
+                'Amazon RDS (MariaDB), IAM Policies, HTTPS / SSL & Domain Routing',
+            },
+            {
+              label: 'Server & Automation',
+              detail:
+                'Linux Server Administration, Bash & Windows Batch Scripting, Standalone Offline Packaging',
+            },
+          ],
+        },
+        frontend: {
+          title: 'Frontend Engineering',
+          subtitle: 'Crafting clean, responsive, and accessible user interfaces.',
+          items: [
+            {
+              label: 'Core Web',
+              detail: 'Semantic HTML5, Modern CSS3 (Flexbox, Grid, CSS Variables)',
+            },
+            {
+              label: 'UI & Styling',
+              detail:
+                'Bootstrap 5, Responsive Mobile-First Design, Dark/Light Theming',
+            },
+            {
+              label: 'Interactivity & Localization',
+              detail:
+                'Vanilla JavaScript (ES6+), Bilingual Support (English LTR & Arabic RTL)',
+            },
+          ],
+        },
+        tools: {
+          title: 'Tools & Development Workflow',
+          subtitle:
+            'Streamlining delivery with version control and modern productivity tooling.',
+          items: [
+            {
+              label: 'Version Control & Deployment',
+              detail: 'Git, GitHub, GitHub Pages, Composer',
+            },
+            {
+              label: 'Environment & Debugging',
+              detail: 'Local & Portable Dev Stacks (XAMPP), Browser DevTools',
+            },
+            {
+              label: 'Modern Workflow',
+              detail:
+                'AI-Assisted Development, Code Refactoring & Workflow Automation',
+            },
+          ],
+          aiTag: 'AI-Assisted Dev',
+        },
       },
       projects: {
         kicker: 'Selected Work',
@@ -179,18 +249,88 @@
         title: 'المهارات التقنية',
         subtitle:
           'مجموعة مهارات متكاملة تغطي هندسة الأنظمة الخلفية، البنية السحابية، تطوير الواجهات المتجاوبة، وأدوات العمل الحديثة.',
-        backendTitle: 'الأنظمة الخلفية وقواعد البيانات',
-        backendItems: ['PHP', 'Laravel', 'MySQL'],
-        cloudTitle: 'السحابة و DevOps',
-        cloudItems: [
-          'AWS (EC2 و RDS و IAM و Auto Scaling)',
-          'إدارة خوادم Linux',
-          'كتابة سكربتات Bash',
-        ],
-        frontendTitle: 'الواجهات الأمامية',
-        frontendItems: ['HTML5 و CSS3', 'Bootstrap', 'JavaScript', 'قوالب Blade'],
-        toolsTitle: 'الأدوات وسير العمل',
-        toolsItems: ['Git و GitHub', 'Composer', 'التطوير المدعوم بالذكاء الاصطناعي'],
+        backend: {
+          title: 'هندسة الأنظمة الخلفية وقواعد البيانات',
+          subtitle:
+            'بناء أنظمة خلفية قابلة للتوسع وسهلة الصيانة مع قواعد بيانات علائقية متينة.',
+          items: [
+            {
+              label: 'PHP 8+ و Laravel',
+              detail: 'معمارية MVC، و Eloquent ORM، وقوالب Blade، و Migrations و Seeders',
+            },
+            {
+              label: 'قدرات الأنظمة',
+              detail:
+                'تعدد المستأجرين (Multi-Tenancy)، صلاحيات المستخدمين (RBAC)، واجهات RESTful APIs، واستيراد وتصدير بيانات Excel',
+            },
+            {
+              label: 'قواعد البيانات',
+              detail:
+                'MySQL و MariaDB — تصميم المخططات العلائقية، الفهرسة (Indexing)، وتحسين أداء الاستعلامات',
+            },
+          ],
+        },
+        cloud: {
+          title: 'البنية السحابية و DevOps',
+          subtitle: 'نشر وتأمين وتوسيع تطبيقات الويب في بيئات الإنتاج السحابية.',
+          items: [
+            {
+              label: 'الحوسبة والتوسع على AWS',
+              detail: 'EC2، وصور AMIs، وقوالب الإطلاق (Launch Templates)، ومجموعات Auto Scaling',
+            },
+            {
+              label: 'البيانات والأمان على AWS',
+              detail:
+                'Amazon RDS (MariaDB)، وسياسات IAM، وشهادات HTTPS / SSL وتوجيه النطاقات',
+            },
+            {
+              label: 'إدارة الخوادم والأتمتة',
+              detail:
+                'إدارة خوادم Linux، وسكربتات Bash و Windows Batch، وتغليف الأنظمة للعمل المحلي دون إنترنت',
+            },
+          ],
+        },
+        frontend: {
+          title: 'هندسة الواجهات الأمامية',
+          subtitle: 'تصميم وبناء واجهات مستخدم نظيفة، متجاوبة، وسهلة الوصول.',
+          items: [
+            {
+              label: 'أساسيات الويب',
+              detail: 'HTML5 الدلالية، و CSS3 الحديثة (Flexbox و Grid ومتغيرات CSS)',
+            },
+            {
+              label: 'الواجهات والتنسيق',
+              detail:
+                'Bootstrap 5، والتصميم المتجاوب (Mobile-First)، وتبديل الوضع الداكن والفاتح',
+            },
+            {
+              label: 'التفاعل ودعم اللغات',
+              detail:
+                'Vanilla JavaScript (ES6+)، ودعم المواقع ثنائية اللغة (الإنجليزية LTR والعربية RTL)',
+            },
+          ],
+        },
+        tools: {
+          title: 'الأدوات وسير العمل التطويري',
+          subtitle:
+            'تسريع تسليم المشاريع عبر إدارة الإصدارات وأدوات الإنتاجية الحديثة.',
+          items: [
+            {
+              label: 'إدارة الإصدارات والنشر',
+              detail: 'Git و GitHub و GitHub Pages و Composer',
+            },
+            {
+              label: 'بيئة التطوير وتصحيح الأخطاء',
+              detail: 'بيئات التطوير المحلية والمحمولة (XAMPP)، وأدوات مطوري المتصفح (DevTools)',
+            },
+            {
+              label: 'سير العمل الحديث',
+              detail:
+                'التطوير المدعوم بالذكاء الاصطناعي، وإعادة هيكلة الشيفرة، وأتمتة مهام العمل',
+            },
+          ],
+          aiTag: 'تطوير بالذكاء الاصطناعي',
+        },
       },
       projects: {
         kicker: 'أبرز الأعمال',

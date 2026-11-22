@@ -265,81 +265,222 @@
             </p>
           </div>
 
-          <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
-            <!-- Card 1: Backend & Databases -->
+          <div class="row row-cols-1 row-cols-lg-2 g-4">
+            <!-- Card 1: Backend & Database Architecture -->
             <div class="col">
-              <article class="skill-card h-100">
+              <article class="skill-card h-100 d-flex flex-column">
                 <div class="skill-card-head">
                   <div class="skill-icon-box" aria-hidden="true">
                     <i class="bi bi-database"></i>
                   </div>
-                  <h3 class="skill-card-title mb-0" data-i18n="skills.backendTitle">
-                    Backend &amp; Databases
-                  </h3>
+                  <div class="skill-card-heading">
+                    <h3 class="skill-card-title mb-1" data-i18n="skills.backend.title">
+                      Backend &amp; Database Architecture
+                    </h3>
+                    <p class="skill-card-subtitle mb-0" data-i18n="skills.backend.subtitle">
+                      Building scalable, maintainable server-side systems and relational databases.
+                    </p>
+                  </div>
                 </div>
+
                 <ul class="skill-list list-unstyled mb-0">
-                  <li data-i18n="skills.backendItems.0">PHP</li>
-                  <li data-i18n="skills.backendItems.1">Laravel</li>
-                  <li data-i18n="skills.backendItems.2">MySQL</li>
+                  <li class="skill-item">
+                    <span class="skill-item-label" data-i18n="skills.backend.items.0.label">
+                      PHP 8+ &amp; Laravel
+                    </span>
+                    <span class="skill-item-detail" data-i18n="skills.backend.items.0.detail">
+                      MVC Architecture, Eloquent ORM, Blade, Migrations &amp; Seeders
+                    </span>
+                  </li>
+                  <li class="skill-item">
+                    <span class="skill-item-label" data-i18n="skills.backend.items.1.label">
+                      System Capabilities
+                    </span>
+                    <span class="skill-item-detail" data-i18n="skills.backend.items.1.detail">
+                      Multi-Tenancy, Role-Based Access Control (RBAC), RESTful APIs, Excel Data Import/Export
+                    </span>
+                  </li>
+                  <li class="skill-item">
+                    <span class="skill-item-label" data-i18n="skills.backend.items.2.label">
+                      Databases
+                    </span>
+                    <span class="skill-item-detail" data-i18n="skills.backend.items.2.detail">
+                      MySQL &amp; MariaDB — Relational Schema Design, Indexing &amp; Query Optimization
+                    </span>
+                  </li>
                 </ul>
+
+                <div class="skill-tags mt-auto pt-3" aria-label="Key backend technologies">
+                  <span class="skill-tag">PHP 8+</span>
+                  <span class="skill-tag">Laravel</span>
+                  <span class="skill-tag">Eloquent ORM</span>
+                  <span class="skill-tag">RESTful APIs</span>
+                  <span class="skill-tag">RBAC</span>
+                  <span class="skill-tag">MySQL / MariaDB</span>
+                </div>
               </article>
             </div>
 
-            <!-- Card 2: Cloud & DevOps -->
+            <!-- Card 2: Cloud Infrastructure & DevOps -->
             <div class="col">
-              <article class="skill-card h-100">
+              <article class="skill-card h-100 d-flex flex-column">
                 <div class="skill-card-head">
                   <div class="skill-icon-box" aria-hidden="true">
                     <i class="bi bi-cloud-check"></i>
                   </div>
-                  <h3 class="skill-card-title mb-0" data-i18n="skills.cloudTitle">
-                    Cloud &amp; DevOps
-                  </h3>
+                  <div class="skill-card-heading">
+                    <h3 class="skill-card-title mb-1" data-i18n="skills.cloud.title">
+                      Cloud Infrastructure &amp; DevOps
+                    </h3>
+                    <p class="skill-card-subtitle mb-0" data-i18n="skills.cloud.subtitle">
+                      Deploying, securing, and scaling production web applications.
+                    </p>
+                  </div>
                 </div>
+
                 <ul class="skill-list list-unstyled mb-0">
-                  <li data-i18n="skills.cloudItems.0">AWS (EC2, RDS, IAM, Auto Scaling)</li>
-                  <li data-i18n="skills.cloudItems.1">Linux Administration</li>
-                  <li data-i18n="skills.cloudItems.2">Bash Scripting</li>
+                  <li class="skill-item">
+                    <span class="skill-item-label" data-i18n="skills.cloud.items.0.label">
+                      AWS Compute &amp; Scaling
+                    </span>
+                    <span class="skill-item-detail" data-i18n="skills.cloud.items.0.detail">
+                      EC2, AMIs, Launch Templates, Auto Scaling Groups
+                    </span>
+                  </li>
+                  <li class="skill-item">
+                    <span class="skill-item-label" data-i18n="skills.cloud.items.1.label">
+                      AWS Data &amp; Security
+                    </span>
+                    <span class="skill-item-detail" data-i18n="skills.cloud.items.1.detail">
+                      Amazon RDS (MariaDB), IAM Policies, HTTPS / SSL &amp; Domain Routing
+                    </span>
+                  </li>
+                  <li class="skill-item">
+                    <span class="skill-item-label" data-i18n="skills.cloud.items.2.label">
+                      Server &amp; Automation
+                    </span>
+                    <span class="skill-item-detail" data-i18n="skills.cloud.items.2.detail">
+                      Linux Server Administration, Bash &amp; Windows Batch Scripting, Standalone Offline Packaging
+                    </span>
+                  </li>
                 </ul>
+
+                <div class="skill-tags mt-auto pt-3" aria-label="Key cloud and DevOps technologies">
+                  <span class="skill-tag">AWS EC2</span>
+                  <span class="skill-tag">Amazon RDS</span>
+                  <span class="skill-tag">IAM</span>
+                  <span class="skill-tag">Auto Scaling</span>
+                  <span class="skill-tag">Linux</span>
+                  <span class="skill-tag">Bash / Batch</span>
+                </div>
               </article>
             </div>
 
-            <!-- Card 3: Frontend -->
+            <!-- Card 3: Frontend Engineering -->
             <div class="col">
-              <article class="skill-card h-100">
+              <article class="skill-card h-100 d-flex flex-column">
                 <div class="skill-card-head">
                   <div class="skill-icon-box" aria-hidden="true">
                     <i class="bi bi-layout-text-window-reverse"></i>
                   </div>
-                  <h3 class="skill-card-title mb-0" data-i18n="skills.frontendTitle">
-                    Frontend
-                  </h3>
+                  <div class="skill-card-heading">
+                    <h3 class="skill-card-title mb-1" data-i18n="skills.frontend.title">
+                      Frontend Engineering
+                    </h3>
+                    <p class="skill-card-subtitle mb-0" data-i18n="skills.frontend.subtitle">
+                      Crafting clean, responsive, and accessible user interfaces.
+                    </p>
+                  </div>
                 </div>
+
                 <ul class="skill-list list-unstyled mb-0">
-                  <li data-i18n="skills.frontendItems.0">HTML5 &amp; CSS3</li>
-                  <li data-i18n="skills.frontendItems.1">Bootstrap</li>
-                  <li data-i18n="skills.frontendItems.2">JavaScript</li>
-                  <li data-i18n="skills.frontendItems.3">Blade Templating</li>
+                  <li class="skill-item">
+                    <span class="skill-item-label" data-i18n="skills.frontend.items.0.label">
+                      Core Web
+                    </span>
+                    <span class="skill-item-detail" data-i18n="skills.frontend.items.0.detail">
+                      Semantic HTML5, Modern CSS3 (Flexbox, Grid, CSS Variables)
+                    </span>
+                  </li>
+                  <li class="skill-item">
+                    <span class="skill-item-label" data-i18n="skills.frontend.items.1.label">
+                      UI &amp; Styling
+                    </span>
+                    <span class="skill-item-detail" data-i18n="skills.frontend.items.1.detail">
+                      Bootstrap 5, Responsive Mobile-First Design, Dark/Light Theming
+                    </span>
+                  </li>
+                  <li class="skill-item">
+                    <span class="skill-item-label" data-i18n="skills.frontend.items.2.label">
+                      Interactivity &amp; Localization
+                    </span>
+                    <span class="skill-item-detail" data-i18n="skills.frontend.items.2.detail">
+                      Vanilla JavaScript (ES6+), Bilingual Support (English LTR &amp; Arabic RTL)
+                    </span>
+                  </li>
                 </ul>
+
+                <div class="skill-tags mt-auto pt-3" aria-label="Key frontend technologies">
+                  <span class="skill-tag">HTML5</span>
+                  <span class="skill-tag">CSS3</span>
+                  <span class="skill-tag">Bootstrap 5</span>
+                  <span class="skill-tag">JavaScript (ES6+)</span>
+                  <span class="skill-tag">LTR / RTL</span>
+                </div>
               </article>
             </div>
 
-            <!-- Card 4: Tools & Workflow -->
+            <!-- Card 4: Tools & Development Workflow -->
             <div class="col">
-              <article class="skill-card h-100">
+              <article class="skill-card h-100 d-flex flex-column">
                 <div class="skill-card-head">
                   <div class="skill-icon-box" aria-hidden="true">
                     <i class="bi bi-terminal"></i>
                   </div>
-                  <h3 class="skill-card-title mb-0" data-i18n="skills.toolsTitle">
-                    Tools &amp; Workflow
-                  </h3>
+                  <div class="skill-card-heading">
+                    <h3 class="skill-card-title mb-1" data-i18n="skills.tools.title">
+                      Tools &amp; Development Workflow
+                    </h3>
+                    <p class="skill-card-subtitle mb-0" data-i18n="skills.tools.subtitle">
+                      Streamlining delivery with version control and modern productivity tooling.
+                    </p>
+                  </div>
                 </div>
+
                 <ul class="skill-list list-unstyled mb-0">
-                  <li data-i18n="skills.toolsItems.0">Git &amp; GitHub</li>
-                  <li data-i18n="skills.toolsItems.1">Composer</li>
-                  <li data-i18n="skills.toolsItems.2">AI-Assisted Development</li>
+                  <li class="skill-item">
+                    <span class="skill-item-label" data-i18n="skills.tools.items.0.label">
+                      Version Control &amp; Deployment
+                    </span>
+                    <span class="skill-item-detail" data-i18n="skills.tools.items.0.detail">
+                      Git, GitHub, GitHub Pages, Composer
+                    </span>
+                  </li>
+                  <li class="skill-item">
+                    <span class="skill-item-label" data-i18n="skills.tools.items.1.label">
+                      Environment &amp; Debugging
+                    </span>
+                    <span class="skill-item-detail" data-i18n="skills.tools.items.1.detail">
+                      Local &amp; Portable Dev Stacks (XAMPP), Browser DevTools
+                    </span>
+                  </li>
+                  <li class="skill-item">
+                    <span class="skill-item-label" data-i18n="skills.tools.items.2.label">
+                      Modern Workflow
+                    </span>
+                   <span class="skill-item-detail" data-i18n="skills.tools.items.2.detail">
+                      AI-Assisted Development, Code Refactoring &amp; Workflow Automation
+                    </span>
+                  </li>
                 </ul>
+
+                <div class="skill-tags mt-auto pt-3" aria-label="Key workflow tools">
+                  <span class="skill-tag">Git &amp; GitHub</span>
+                  <span class="skill-tag">GitHub Pages</span>
+                  <span class="skill-tag">Composer</span>
+                  <span class="skill-tag">XAMPP</span>
+                  <span class="skill-tag" data-i18n="skills.tools.aiTag">AI-Assisted Dev</span>
+                </div>
               </article>
             </div>
           </div>
